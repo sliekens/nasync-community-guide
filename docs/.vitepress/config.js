@@ -53,6 +53,12 @@ export default {
                 { text: 'Tailscale', link: '/ugos/install/tailscale' },
                 { text: 'AdGuard Home', link: '/ugos/install/adguardhome'} 
               ]
+            },
+            {
+              text: "Docker",
+              items: [
+                { text: "Container users", link: "/ugos/docker/container-users" },
+              ],
             }
             // Add more sidebar items
           ],
