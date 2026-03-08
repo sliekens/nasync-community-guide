@@ -25,8 +25,8 @@ export default {
         {
           text: 'Getting Started',
           items: [
-            { 
-              text: 'Official Beginner\'s Guide', 
+            {
+              text: 'Official Beginner\'s Guide',
               link: 'https://nas.ugreen.com/pages/nasync-series-beginner-guide',
               target: '_blank' // This makes the link open in a new tab
             },
@@ -51,7 +51,7 @@ export default {
                 { text: 'Ngnix Proxy Manager', link: '/ugos/install/npm' },
                 { text: 'OpenWebUI', link: '/ugos/install/open-webui' },
                 { text: 'Tailscale', link: '/ugos/install/tailscale' },
-                { text: 'AdGuard Home', link: '/ugos/install/adguardhome'} 
+                { text: 'AdGuard Home', link: '/ugos/install/adguardhome'}
               ]
             },
             {
@@ -68,6 +68,7 @@ export default {
         items: [
           { text: 'Accessing BIOS', link: '/advanced-guides/accessing-bios' },
           { text: 'Backup UGOS SSD', link: '/advanced-guides/clonezilla-backup' },
+          { text: 'VM Folder Passthrough', link: '/advanced-guides/vm-folder-passthrough' },
           // ... other advanced guides
         ]
         },
@@ -102,4 +103,4 @@ export default {
       /^https?:\/\/raw.githubusercontent.com/,
     ],
   }
-  
+
