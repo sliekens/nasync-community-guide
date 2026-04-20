@@ -54,7 +54,7 @@ Check that earlyoom is running and read its thresholds:
 
 ```bash
 # Is earlyoom running?
-ps aux | grep earlyoom
+pgrep -a earlyoom
 ```
 
 ```bash
