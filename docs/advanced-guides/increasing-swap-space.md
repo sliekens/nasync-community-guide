@@ -79,7 +79,7 @@ process that allocates significant memory gets killed immediately.
 ```bash
 # Memory pressure by container (resident RAM only, excludes swap)
 docker stats --no-stream --format 'table {{.Name}}\t{{.MemUsage}}\t{{.MemPerc}}' \
-  | sort -k3 -hr
+  | sort -k3 -nr
 ```
 
 ```bash
