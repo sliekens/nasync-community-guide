@@ -4,6 +4,9 @@ This guide walks you through adding extra swap space to a UGREEN NAS running UGO
 
 **Who this is for:** Anyone running a UGREEN NAS with many Docker containers who is seeing containers crash on startup, restart loops, or a sluggish system — especially on an 8 GB model. You do not need deep Linux knowledge to follow this guide, but you will be running commands as root, so read each step before you run it.
 
+> [!WARNING]
+> The commands in this guide run as **root** — the most privileged user on the system. A mistake (wrong path, wrong size, wrong file) can overwrite or delete data, corrupt the OS, or render the NAS unbootable. There is no undo. Read each command carefully before you run it, and do not copy-paste commands you do not understand.
+
 **What this does:** It creates a large file on your NAS's internal NVMe drive and tells the operating system to use it as overflow memory (swap). This gives processes more room to breathe when RAM fills up, which stops the OS from killing containers mid-start.
 
 **Risks and limitations:**
@@ -12,6 +15,9 @@ This guide walks you through adding extra swap space to a UGREEN NAS running UGO
 - **You are running commands as root.** A typo in the wrong place can delete data or break your system. Double-check every command before pressing Enter.
 - **The swapfile will occupy space on your system NVMe.** A 16 GB swapfile on a 107 GB `/overlay` partition is fine; check your available space before sizing.
 - **UGOS-specific behaviour:** UGOS ships with [earlyoom](https://github.com/rfjakob/earlyoom), a daemon that kills processes before the kernel's own out-of-memory killer fires. This is why crashing containers show exit code 137 but `OOMKilled: false` — earlyoom kills them outside of Docker's awareness. Increasing swap gives earlyoom enough headroom to stop firing.
+
+> [!NOTE]
+> This guide was written and tested on a **UGREEN DXP4800 Plus with 8 GB of RAM** running UGOS. The symptoms, partition layout, and earlyoom behaviour described here should apply to other UGREEN NAS models, but exact partition names, sizes, and software versions may differ slightly on your device.
 
 ---
 
