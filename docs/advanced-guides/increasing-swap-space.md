@@ -60,7 +60,7 @@ pgrep -a earlyoom
 ```bash
 # What are its thresholds?
 # -m 5      = kill when available memory < 5%
-# -M 65536  = kill when available memory < 65536 KiB (64 MB)
+# -M 65536  = kill when available memory < 65536 KiB (64 MiB)
 # -s 20     = kill when swap free < 20%
 cat /etc/default/earlyoom
 ```
