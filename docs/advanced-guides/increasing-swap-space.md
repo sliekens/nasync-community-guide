@@ -1,6 +1,6 @@
 # Increasing Swap Space on a UGREEN NAS
 
-This guide walks you through adding extra swap space to a UGREEN NAS running UGOS. It covers diagnosing the problem, creating a swapfile, and making it survive reboots — including a workaround for a UGOS-specific boot-ordering bug that causes the obvious approaches to silently fail.
+This guide walks you through adding extra swap space to a UGREEN NAS running UGOS. It covers diagnosing low swap space, creating an extra swapfile, and making it survive reboots.
 
 **Who this is for:** Anyone running a UGREEN NAS with many Docker containers who is seeing containers crash on startup, restart loops, or a sluggish system — especially on an 8 GB model. You do not need deep Linux knowledge to follow this guide, but you will be running commands as root, so read each step before you run it.
 
